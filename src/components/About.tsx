@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Crafting high-performance, visually stunning mobile experiences with ~2 years of expertise in Flutter. I am passionate about UI/UX design and building apps that feel futuristic and fluid.
         </p>
       </div>
     </div>

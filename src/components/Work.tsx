@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Work = () => {
   useGSAP(() => {
@@ -12,14 +12,18 @@ const Work = () => {
 
   function setTranslateX() {
     const box = document.getElementsByClassName("work-box");
+    if (!box || box.length === 0) return;
     const rectLeft = document
       .querySelector(".work-container")!
       .getBoundingClientRect().left;
     const rect = box[0].getBoundingClientRect();
     const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    let padding: number =
-      parseInt(window.getComputedStyle(box[0]).padding) / 2;
+    let paddingStr = window.getComputedStyle(box[0]).padding;
+    let padding: number = parseInt(paddingStr) / 2;
+    if (isNaN(padding)) padding = 40; // Default fallback from CSS
+    
     translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+    if (isNaN(translateX) || translateX < 0) translateX = 0;
   }
 
   setTranslateX();
