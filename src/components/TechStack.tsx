@@ -12,22 +12,23 @@ import {
 } from "@react-three/rapier";
 
 const textureLoader = new THREE.TextureLoader();
+const baseUrl = import.meta.env.BASE_URL;
 const imageUrls = [
-  "/images/flutter.png",
-  "/images/dart.png",
-  "/images/firebase.png",
-  "/images/figma.png",
-  "/images/git.png",
-  "/images/github.png",
-  "/images/androidstudio.png",
-  "/images/vscode.png",
-  "/images/cplusplus.png",
-  "/images/postman.png",
-  "/images/c.png",
-  "/images/html.png",
-  "/images/css.png",
-  "/images/media_query.png",
-  "/images/layout_builder.png"
+  `${baseUrl}images/flutter.png`,
+  `${baseUrl}images/dart.png`,
+  `${baseUrl}images/firebase.png`,
+  `${baseUrl}images/figma.png`,
+  `${baseUrl}images/git.png`,
+  `${baseUrl}images/github.png`,
+  `${baseUrl}images/androidstudio.png`,
+  `${baseUrl}images/vscode.png`,
+  `${baseUrl}images/cplusplus.png`,
+  `${baseUrl}images/postman.png`,
+  `${baseUrl}images/c.png`,
+  `${baseUrl}images/html.png`,
+  `${baseUrl}images/css.png`,
+  `${baseUrl}images/media_query.png`,
+  `${baseUrl}images/layout_builder.png`
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
